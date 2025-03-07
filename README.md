@@ -38,7 +38,8 @@ This guide is made to help you deploy your own pipline with Open-WebUI and Local
 
   Edit model prompt as you like:
 
-  ![Uploading Screenshot_20250307_170526.png…]()
+  ![Screenshot_20250307_170526](https://github.com/user-attachments/assets/68378e1c-a6f1-4299-9fce-c587d05c7838)
+
 
 
 
