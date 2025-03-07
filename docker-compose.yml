@@ -1,0 +1,29 @@
+services:
+  ui:
+    image: ghcr.io/open-webui/open-webui:latest
+    restart: always
+    # Make shure both containers are in the same network
+    # as well as vllm or ollama container
+    network_mode: "vllm_default"
+    ports:
+      - 3011:8080
+    volumes:
+      - /home/your_user/open_webui_vllm:/app/backend/data
+    environment:
+      - ENABLE_RAG_WEB_SEARCH=true 
+      - RAG_WEB_SEARCH_ENGINE=duckduckgo 
+      - ENABLE_OLLAMA_API=false 
+      - OPENAI_API_KEY=aaaaa 
+      - ENABLE_IMAGE_GENERATION=false
+      - WHISPER_MODEL=large 
+      #use ip wich can be accessed in your LAN or ip from docker network
+      - OPENAI_API_BASE_URL=your_vll_host
+
+  pipelines:
+    image: ghcr.io/open-webui/pipelines:main
+    restart: always
+    network_mode: "vllm_default"
+    ports:
+      - 9099:9099
+    volumes:
+      - /home/your_user/pipelines:/app/pipelines
