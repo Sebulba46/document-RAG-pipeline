@@ -1,0 +1,32 @@
+services:
+  vllm-openai:
+      image: vllm/vllm-openai:latest
+      environment:
+          - HUGGING_FACE_HUB_TOKEN=your_token
+      volumes:
+          - ./.cache/huggingface:/root/.cache/huggingface
+          - ./models:/models
+      ports:
+          - 8983:8000
+      restart: always
+      network_mode: 'vllm_default'
+      command:
+          - "--device"
+          - "auto"
+          - "--max-model-len"
+          - "9000"
+          - "--gpu-memory-utilization"
+          - "0.9"
+          - "--enforce-eager"
+          #- "--dtype"
+          #- "float16"
+          - "--model"
+          - "mistralai/Mistral-7B-Instruct-v0.3"
+          #- "Qwen/Qwen2.5-7B-Instruct"
+      deploy:
+        resources:
+          reservations:
+            devices:
+              - driver: nvidia
+                count: 1
+                capabilities: [gpu]
