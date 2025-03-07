@@ -1,5 +1,5 @@
 # Guide for making RAG document pipeline for Open-WebUI 
-This guide is made to help you deploy your own pipline with Open-WebUI and Local LLM.
+This guide is made to help you deploy your own document RAG pipline with Open-WebUI and Local LLM.
 ## Setup:
   - VLLM running in docker
   - Open-WebUI and pipelines container running in docker
@@ -40,6 +40,7 @@ This guide is made to help you deploy your own pipline with Open-WebUI and Local
 
   ![Screenshot_20250307_170526](https://github.com/user-attachments/assets/68378e1c-a6f1-4299-9fce-c587d05c7838)
 
+And you are good to go. Just upload modified py file to the Open-WebUI and use your RAG. 
 
 
 
