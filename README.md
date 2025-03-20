@@ -21,7 +21,7 @@ This guide is made to help you deploy your own document RAG pipline with Open-We
   ```
   Then install all neseccary libraries:
   ```bash
-  pip install llama-index llama-index-core llama-index-llms-openai-like llama-index-readers-file pymupdf llama-index-embeddings-huggingface
+  pip install docx2txt llama-index llama-index-core llama-index-llms-openai-like llama-index-readers-file pymupdf llama-index-embeddings-huggingface
 
   apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
   ```
